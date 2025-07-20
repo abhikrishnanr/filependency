@@ -11,6 +11,9 @@ This is a simple prototype of a file pendency tracking system built with core PH
 ## Setup
 1. Import `database.sql` into a MySQL database and update `config/db.php` with credentials.
 2. Host the project in a PHP 8 environment.
-3. Access `login.php` and log in using credentials from the users table.
+3. Access `login.php` and log in using credentials from the users table. A demo super admin account is created when importing the SQL file:
+
+   - **Email:** someone@example.com
+   - **Password:** 123456
 
 The demo uses external APIs provided by the Government of Kerala to fetch department data. Only status updates are stored locally.
