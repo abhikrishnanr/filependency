@@ -13,11 +13,19 @@ if(!isset($endpoints[$type])) {
 }
 $target = __DIR__.'/../data/'.$type.'.json';
 $logFile = __DIR__.'/../data/update_log.json';
-$data = @file_get_contents($endpoints[$type]);
-if($data===false){
-    echo json_encode(['success'=>false,'error'=>'Fetch failed']);
+$ch = curl_init($endpoints[$type]);
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_USERAGENT => 'Filependency/1.0',
+    CURLOPT_FOLLOWLOCATION => true,
+]);
+$data = curl_exec($ch);
+if ($data === false) {
+    echo json_encode(['success'=>false,'error'=>curl_error($ch)]);
+    curl_close($ch);
     exit;
 }
+curl_close($ch);
 file_put_contents($target,$data);
 $log = file_exists($logFile) ? json_decode(file_get_contents($logFile),true) : [];
 $time = date('Y-m-d H:i:s');

@@ -17,3 +17,10 @@ This is a simple prototype of a file pendency tracking system built with core PH
    - **Password:** 123456
 
 The demo uses external APIs provided by the Government of Kerala to fetch department data. Only status updates are stored locally.
+
+### Updating master data
+
+After logging in, use the **Update** buttons on the dashboard to download the latest
+department, category and file lists from `fileadalath.kerala.gov.in`. The requests
+are proxied through the `api/` endpoints which now use cURL for improved
+compatibility.
