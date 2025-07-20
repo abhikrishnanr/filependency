@@ -1,8 +1,8 @@
 <?php
-$host = 'REMOTE_DB_HOST';
-$db   = 'your_db_name';
-$user = 'db_user';
-$pass = 'db_password';
+$host = 'host.webtestingonline.com:3306';
+$db   = 'webtestin_filependencyu';
+$user = 'webtestin_filependencyu';
+$pass = 'Jz5PD!rfi7SY';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
