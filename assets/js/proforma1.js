@@ -14,7 +14,7 @@ $(function () {
         var deptId = $(this).val();
         if (!deptId) return;
         $('#fileTableContainer').html('<div class="text-center">Loading...</div>');
-        $.getJSON(`api/fetch_master_data.php?url=https://fileadhalath.kerala.gov.in/api/department-files/${deptId}`, function (files) {
+        $.getJSON(`api/fetch_master_data.php?url=https://fileadalath.kerala.gov.in/api/department-files/${deptId}`, function (files) {
             var rows = '';
             files.forEach(function (file, idx) {
                 rows += `<tr data-file-id="${file.id}">
@@ -35,7 +35,7 @@ $(function () {
     });
 
     function loadCategories() {
-        $.getJSON('api/fetch_master_data.php?url=https://fileadhalath.kerala.gov.in/api/department-category', function (cats) {
+        $.getJSON('api/fetch_master_data.php?url=https://fileadalath.kerala.gov.in/api/department-category', function (cats) {
             $('.category-select').each(function () {
                 var sel = $(this);
                 cats.forEach(function (c) {
