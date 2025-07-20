@@ -1,6 +1,6 @@
 <?php
 $host = 'host.webtestingonline.com:3306';
-$db   = 'webtestin_filependencyu';
+$db   = 'webtestin_filependency';
 $user = 'webtestin_filependencyu';
 $pass = 'Jz5PD!rfi7SY';
 
